@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f5f2;
+  --bg-elevated: #ffffff;
+  --ink: #12151a;
+  --ink-muted: #5c6570;
+  --dark: #0c0f14;
+  --dark-elevated: #151922;
+  --dark-border: #2a303c;
+  --accent: #c4a574;
+  --accent-hover: #d4b88a;
+  --accent-dim: rgba(196, 165, 116, 0.15);
+  --line: #e4e0d8;
+  --warn: #8b7355;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-dark: var(--dark);
+  --color-dark-elevated: var(--dark-elevated);
+  --color-dark-border: var(--dark-border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-dim: var(--accent-dim);
+  --color-line: var(--line);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-fraunces);
+  --font-mono: var(--font-jetbrains);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+.font-mono-tech {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(196, 165, 116, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196, 165, 116, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.tech-grid-light {
+  background-image:
+    linear-gradient(rgba(18, 21, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 21, 26, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.concept-overlay::after {
+  content: "CONCEPT ONLY";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 12px,
+    rgba(12, 15, 20, 0.03) 12px,
+    rgba(12, 15, 20, 0.03) 24px
+  );
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.55);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.section-label {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.prose-studio h2 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+}
+
+.prose-studio p,
+.prose-studio li {
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.prose-studio ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
