@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy": "npm run build && npx gh-pages -d out --nojekyll"
   },
   "dependencies": {
     "framer-motion": "^13.4.0",
@@ -22,6 +23,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "gh-pages": "^6.3.0"
   }
 }

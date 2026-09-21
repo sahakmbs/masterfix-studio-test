@@ -16,6 +16,12 @@ This repo is an interactive **digital remodeling studio** — part portfolio, pa
 
 Both are **test** builds for Seattle MasterFix Precision Craftsmanship. Neither is the live production site (`seattlemasterfix.com`).
 
+## Live preview (GitHub Pages)
+
+**https://sahakmbs.github.io/masterfix-studio-test/**
+
+Static export (`output: 'export'`) with `basePath` `/masterfix-studio-test`. Deployed from the `gh-pages` branch (`out/` build output). The `/design` configurator is a client component and works under this basePath.
+
 ## Stack
 
 - Next.js App Router + TypeScript + Tailwind CSS v4
